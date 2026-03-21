@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#6272f5" />
+    <meta name="description" content="JobTrackr — Track your job applications" />
+    <title>JobTrackr</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['Plus Jakarta Sans', 'sans-serif'],
+          display: ['Syne', 'sans-serif'],
+          mono: ['JetBrains Mono', 'monospace'],
+        },
+        colors: {
+          brand: {
+            50:'#f0f4ff', 100:'#e0e9ff', 200:'#c7d7fe', 300:'#a4bcfd',
+            400:'#8098fb', 500:'#6272f5', 600:'#4f53ea', 700:'#4140d0',
+            800:'#3636a8', 900:'#313285',
+          },
+          surface: {
+            50:'#f8f9fc', 100:'#f1f3f9',
+            800:'#1a1d2e', 900:'#12141f', 950:'#0c0e17',
+          }
+        }
+      }
+    }
+  }
+</script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
