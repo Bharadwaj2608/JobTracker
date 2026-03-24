@@ -68,7 +68,9 @@ const JobSchema = new mongoose.Schema({
     enum: ['low', 'medium', 'high'],
     default: 'medium'
   },
-  tags: [String],
+   tags: [String],
+  followUpSent: { type: Boolean, default: false }
+,
   emailMetadata: {
     messageId: { type: String, default: null },
     subject: { type: String, default: null },

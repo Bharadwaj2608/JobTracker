@@ -42,6 +42,8 @@ router.post('/chat', async (req, res) => {
     }));
 
     const systemPrompt = `You are an expert AI career coach inside JobTrackr, a job application tracking app.
+Do not use markdown headers (##, ###) in your responses. Use plain text, bullet points, and bold only.
+Do not use bold text (**text**) in your responses. Use plain text and bullet points only. Keep responses clean and conversational.
 
 The user's current job applications:
 ${JSON.stringify(jobsContext, null, 2)}

@@ -10,6 +10,8 @@ import './config/passport.js';
 import authRoutes from './routes/auth.js';
 import jobRoutes from './routes/jobs.js';
 import statsRoutes from './routes/stats.js';
+import autofillRoutes from './routes/autofill.js';
+import { startFollowUpReminder, startWeeklyDigest } from './services/cronJobs.js';
 import googleRoutes from './routes/google.js';
 import aiRoutes from './routes/ai.js';
 import gmailRoutes from './routes/gmail.js';
@@ -27,9 +29,13 @@ app.use(express.json());
 app.use(passport.initialize());
 
 app.use('/api/auth', authRoutes);
-app.use('/api/auth/google', googleRoutes);
 app.use('/api/jobs', jobRoutes);
 app.use('/api/stats', statsRoutes);
+app.use('/api/autofill', autofillRoutes);
+
+startFollowUpReminder();
+startWeeklyDigest();
+app.use('/api/auth/google', googleRoutes);
 app.use('/api/ai', aiRoutes);
 app.use('/api/gmail', gmailRoutes);
 app.use('/api/email-import', emailImport);
